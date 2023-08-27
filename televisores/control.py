@@ -1,70 +1,40 @@
-class TV:
-    _numTV = 0
-    def __init__(self, marca, estado):
-        self._marca = marca
-        self._estado = estado
-        self._canal = 1
-        self._volumen = 1
-        self._precio = 500
-        self._control = None
-        TV._numTV += 1
+class Control:
+    
+    def __init__(self):
+        self.tv = None
 
-    def setMarca(self, marca):
-        self._marca = marca
-    def getMarca(self):
-        return self._marca
-    
-    def setCanal(self, canal):
-        if self._estado:
-            if 1 <= canal and canal <= 120:
-                self._canal = canal
-    def getCanal(self):
-        return self._canal
-
-    def setPrecio(self, precio):
-        self._precio = precio
-    def getPrecio(self):
-        return self._precio
-
-    def setVolumen(self, volumen):
-        if self._estado:
-            if 0 <= volumen and volumen <= 7:
-                self._volumen = volumen
-    def getVolumen(self):
-        return self._volumen
-    
-    def setControl(self, control):
-        self._control = control
-    def getControl(self):
-        return self._control
-    
-    def setNumTV(numTV):
-        TV._numTV = numTV
-    def getNumTV():
-        return TV._numTV
-    
+    def enlazar(self, tv):
+        tv.setControl(self)
+        self.tv = tv
+    def setTv(self, tv):
+        self.tv = tv
+    def getTv(self):
+        return self.tv
+ 
     def turnOn(self):
-        self._estado = True
+        if self.tv != None:
+            self.tv.turnOn()
     def turnOff(self):
-        self._estado = False
+        if self.tv != None:
+            self.tv.turnOff()
 
-    def getEstado(self):
-        return self._estado
-    
     def canalUp(self):
-        if self._estado:
-            if self._canal < 120:
-                self._canal += 1
+        if self.tv != None:
+            self.tv.canalUp()
     def canalDown(self):
-        if self._estado:
-            if self._canal > 1:
-                self._canal -= 1 
+        if self.tv != None:
+            self.tv.canalDown()
 
     def volumenUp(self):
-        if self._estado:
-            if self._volumen < 7:
-                self._volumen += 1
+        if self.tv != None:
+            self.tv.volumenUp()
     def volumenDown(self):
-        if self._estado:
-            if self._volumen > 0:
-                self._volumen -= 1
+        if self.tv != None:
+            self.tv.volumenDown()
+
+    def setCanal(self, canal):
+        if self.tv != None:
+            self.tv.setCanal(canal)
+    def setVolumen(self, volumen):
+        if self.tv != None:
+            self.tv.setVolumen(volumen)
