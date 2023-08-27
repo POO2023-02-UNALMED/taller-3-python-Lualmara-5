@@ -78,3 +78,28 @@ class TV:
                 pass
         else:
             pass
+
+    def canalDown(self):
+        if self.getEstado():
+            if self.getCanal() > 1:
+                self._canal = self.getCanal() - 1
+            else:
+                pass
+        else:
+            pass
+
+    def volumenUp(self):
+        if self.getEstado():
+            if self.getVolumen() < 7:
+                self._volumen = self.getVolumen() + 1
+            else: pass
+        else: 
+            pass
+    
+    def volumenDown(self):
+        if self.getEstado():
+            if self.getVolumen() > 0:
+                self._volumen = self.getVolumen() - 1
+            else: pass
+        else: 
+            pass
