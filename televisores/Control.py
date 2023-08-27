@@ -28,7 +28,9 @@ class Control:
         self._tv.setVolumen(canal)  
 
     def enlazar(self, tv):
+
         self._tv = tv
+
         self._tv.setControl(self)  
 
     def setTv(self,tv):
