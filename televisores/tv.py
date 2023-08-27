@@ -46,3 +46,35 @@ class TV:
                 pass
         else:
             pass
+
+    def getVolumen(self):
+        return self._volumen
+    
+    def setControl(self, control):
+        self._control = control
+
+    def getControl(self):
+        return self._control
+    
+    @classmethod
+    def getNumTV(self):
+        return TV._numTV
+    
+    @classmethod
+    def setNumTV(self, numtv):
+        TV._numTV = numtv
+
+    def turnOn(self):
+        self._estado = True
+
+    def turnOff(self):
+        self._estado = False
+    
+    def canalUp(self):
+        if self.getEstado():
+            if self.getCanal() < 120:
+                self._canal = self.getCanal() + 1
+            else:
+                pass
+        else:
+            pass
