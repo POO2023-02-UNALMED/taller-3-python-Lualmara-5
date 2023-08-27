@@ -28,3 +28,21 @@ class TV:
                 pass
         else:
             pass
+
+    def getCanal(self):
+        return self._canal
+    
+    def setPrecio(self, precio):
+        self._precio = precio
+    
+    def getPrecio(self):
+        return self._precio
+    
+    def setVolumen(self,volumen):
+        if self.getEstado():
+            if volumen <= 7 and volumen >= 0:
+                self._volumen = volumen
+            else:
+                pass
+        else:
+            pass
